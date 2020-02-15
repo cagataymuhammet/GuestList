@@ -10,6 +10,7 @@ import com.cagatay.boomsetapp.db.entity.Event
  * Created by Muhammet ÇAĞATAY on 15,Şubat,2020
  */
 
+
 @Dao
 interface EventDao {
 
