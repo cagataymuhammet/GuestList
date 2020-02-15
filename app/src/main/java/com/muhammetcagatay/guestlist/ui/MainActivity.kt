@@ -1,7 +1,8 @@
-package com.muhammetcagatay.guestlist
+package com.muhammetcagatay.guestlist.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.muhammetcagatay.guestlist.R
 
 class MainActivity : AppCompatActivity() {
 
