@@ -26,12 +26,9 @@ abstract class ViewModelModule {
     @ViewModelKey(EventViewModel::class)
     internal abstract fun bindEventViewModel(viewModel: EventViewModel): ViewModel
 
-
     @Binds
     @IntoMap
     @ViewModelKey(GuestViewModel::class)
     internal abstract fun bindGuestViewModel(viewModel: GuestViewModel): ViewModel
-
-
 
 }

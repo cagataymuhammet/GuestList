@@ -4,6 +4,7 @@ package com.cagataymuhammet.guestlist.ui.guest
  * Created by Muhammet ÇAĞATAY on 16,Şubat,2020
  */
 
+import android.app.DownloadManager
 import android.util.Log
 import com.cagataymuhammet.guestlist.db.entity.Guest
 import com.cagataymuhammet.guestlist.model.GuestItem
@@ -14,13 +15,13 @@ import javax.inject.Inject
 
 class GuestViewModel @Inject internal constructor(val app: App, val db: AppDatabase) : BaseViewModel() {
 
-    fun addGuestResponseToLocale(guestResult: List<GuestItem>) {
+    fun addGuestResponseToLocale(eventId:Int,  guestResult: List<GuestItem>) {
 
         if(guestResult.size>0)
         {
-            db.guestDao().deleteAllByEventId(guestResult.get(0).event)
+            db.guestDao().deleteAllByEventId(eventId)
             guestResult.forEach { guestItem ->
-                val guest = Guest(guestItem.firstName, guestItem.lastName, guestItem.company, guestItem.id,guestItem.jobTitle)
+                val guest = Guest(guestItem.firstName, guestItem.lastName, guestItem.company, guestItem.event,guestItem.jobTitle)
                 db.guestDao().insert(guest)
             }
         }
@@ -36,10 +37,10 @@ class GuestViewModel @Inject internal constructor(val app: App, val db: AppDatab
         return guestLocaleData!!;
     }
 
-
-    //TODO filter
     fun loadLocaleGuest(eventId:Int) {
-        guestLocaleData = db.guestDao().getAllGuests()
+
+        guestLocaleData = db.guestDao().getAllGuestsByEventID(eventId)
     }
+
 }
 

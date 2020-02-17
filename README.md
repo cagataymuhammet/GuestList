@@ -20,6 +20,8 @@ The main goal of this app is to be a sample of how to build an high quality Andr
   <img height= "500"  src="https://github.com/cagataymuhammet/GuestList/blob/master/images/ss1.png" alt="SS1" /> 
   <img height= "500"  src="https://github.com/cagataymuhammet/GuestList/blob/master/images/ss2.png" alt="SS2" /> 
   <img height= "500"  src="https://github.com/cagataymuhammet/GuestList/blob/master/images/ss3.png" alt="SS3" /> 
+  <img height= "500"  src="https://github.com/cagataymuhammet/GuestList/blob/master/images/ss4.png" alt="SS3" />
+
 </p>
 
 ## Architecture

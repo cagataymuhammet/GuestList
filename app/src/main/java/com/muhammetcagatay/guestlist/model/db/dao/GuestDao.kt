@@ -26,9 +26,11 @@ interface GuestDao {
     @Query("SELECT * from guests")
     fun getAllGuests() :MutableList<Guest>
 
-
     @Query("SELECT * from guests where event==:eventID")
-    fun getAllGuestsByEventID(eventID:Int) :MutableList<Guest>
+    fun getAllGuestsByEventID(eventID:Int):MutableList<Guest>
+
+    @Query("SELECT * from guests where first_name==:name")
+    fun getAllGuestsByName(name: String):MutableList<Guest>
 
     @Query("SELECT COUNT(*) from guests")
     fun getAllGuestsCount() :Int

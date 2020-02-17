@@ -19,10 +19,12 @@ import javax.inject.Inject
  */
 abstract class BaseActivity<VM : BaseViewModel, VDB : ViewDataBinding>(private val mViewModelClass: Class<VM>): DaggerAppCompatActivity(){
 
+
+    var eventId:Int = -1
+
     val serviceClient by lazy {
         BoomsetApi.create()
     }
-
 
     @Inject
     internal lateinit var viewModelFactory: ViewModelProvider.Factory

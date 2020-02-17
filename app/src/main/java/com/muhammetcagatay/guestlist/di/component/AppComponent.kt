@@ -39,7 +39,6 @@ import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
-import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
@@ -56,27 +55,4 @@ interface AppComponent : AndroidInjector<App> {
     @Component.Factory
     abstract class Factory : AndroidInjector.Factory<App>
 
-
 }
-
-/*
-//TODO TÜM MODÜLLER EKLE
-@Singleton
-@Component(modules = [
-    AndroidSupportInjectionModule::class,
-    AppModule::class,
-    ActivityBuilderModule::class,
-    ViewModelModule::class,
-    NetworkModule::class,
-    DatabaseModule::class])
-
-interface AppComponent : AndroidInjector<App> {
-
-    @Component.Factory
-    abstract class Factory : AndroidInjector.Factory<App>
-}
-
-
-
-*/
-

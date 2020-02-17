@@ -16,15 +16,8 @@ abstract class ActivityBuilderModule {
     @ContributesAndroidInjector(modules = [EventActivityModule::class])
     abstract  fun bindEventListActivity(): EventListActivity
 
-
     @ActivityScope
     @ContributesAndroidInjector(modules = [GuestActivityModule::class])
     abstract  fun bindGuestListActivity():GuestListActivity
 
-    /*
-    @PerActivity
-    @ContributesAndroidInjector
-    internal  abstract fun contributeSplashActivity(): SplashActivity
-
-     */
 }

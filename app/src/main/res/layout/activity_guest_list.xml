@@ -16,8 +16,28 @@
         tools:context=".ui.guest.GuestListActivity">
 
 
+        <RelativeLayout
+            android:id="@+id/searchContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/srcGuests"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_edittex"
+                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:hint="Search Guest"
+                android:queryHint="Search Guest">
+
+            </EditText>
+        </RelativeLayout>
+
+
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefresh"
+            android:layout_below="@id/searchContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -26,10 +46,9 @@
                 android:id="@+id/rv_guest_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/list_item_event"
+                tools:listitem="@layout/list_item_guest"
 
                 />
-
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 

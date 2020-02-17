@@ -29,7 +29,6 @@ interface BoomsetApi {
     fun getEvents(): Single<EventResponse>
 
 
-
     //https://api.boomset.com/events/71790/guests
     @Headers(
         "Accept: application/json",
@@ -38,18 +37,16 @@ interface BoomsetApi {
     @GET("events/{eventId}/guests")
     fun getGuests(@Path("eventId") eventId: Int?): Single<GuestResponse>
 
+
     companion object {
 
         fun create(): BoomsetApi {
-
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(Constants.API_BASE_URL)
                 .build()
-
             return retrofit.create(BoomsetApi::class.java)
-
         }
     }
 }

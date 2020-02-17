@@ -12,6 +12,7 @@ class Constants {
     companion object {
 
         var API_BASE_URL: String =  BuildConfig.API_BASE_URL
+        var EXTRA_NAME_EVENT_ID: String = "extra_event_id"
 
     }
 }

@@ -1,5 +1,6 @@
 package com.muhammetcagatay.guestlist.util
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Context
@@ -33,13 +34,13 @@ class Utils {
         }
 
 
-        fun generateTextDate(context: Context,start:String,end:String,timzone:String):String{
-
+        @SuppressLint("SimpleDateFormat")
+        fun generateDateDesc(start:String):String
+        {
             val parser =  SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
             val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
-            val formattedDate = formatter.format(parser.parse("2018-12-14T09:55:00"))
-
-            return  ""
+            val formattedDate:String = formatter.format(parser.parse(start))
+            return  formattedDate
         }
 
     }

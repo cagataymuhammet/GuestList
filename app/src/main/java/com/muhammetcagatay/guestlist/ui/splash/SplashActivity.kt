@@ -19,7 +19,6 @@ class SplashActivity : AppCompatActivity() {
         }.start()
     }
 
-
     fun startEventListActiviy() {
         val intent = Intent(this, EventListActivity::class.java)
         startActivity(intent)
