@@ -1,4 +1,4 @@
-package com.cagatay.boomsetapp.db.entity
+package com.cagataymuhammet.guestlist.db.entity
 
 
 import android.os.Parcel
@@ -23,16 +23,14 @@ import androidx.room.PrimaryKey
  */
 
 
-
 @Entity(tableName = "events")
-data class Event(@ColumnInfo(name = "id") var id: Int?,
+data class Event(@ColumnInfo(name = "id") var event_id: Int,
                  @ColumnInfo(name = "name") var name: String?,
-                 @ColumnInfo(name = "group_id") var group_id: Int?,
                  @ColumnInfo(name = "timezone") var timezone: String?,
                  @ColumnInfo(name = "starts") var starts: String?,
-                 @ColumnInfo(name = "ends") var ends: Float?,
-                 @ColumnInfo(name = "is_beacon_live") var is_beacon_live: Boolean?) {
+                 @ColumnInfo(name = "ends") var ends: String?) {
 
     @PrimaryKey(autoGenerate = true)
     var uid: Int = 0
+
 }

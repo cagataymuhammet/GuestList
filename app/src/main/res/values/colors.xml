@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorTurquoise">#66ccea</color>
+    <color name="colorTurquoise">#66CCEA</color>
     <color name="colorTurquoiseDark">#56B0CC</color>
 
     <color name="colorPrimary">@color/colorTurquoise</color>
     <color name="colorPrimaryDark">@color/colorTurquoiseDark</color>
     <color name="colorAccent">#0097A7</color>
-
+    <color name="colorWhite">#FFFFFF</color>
 </resources>

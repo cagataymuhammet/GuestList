@@ -2,10 +2,11 @@ package com.muhammetcagatay.guestlist.ui.guest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.DataBindingUtil.setContentView
+import com.cagataymuhammet.guestlist.ui.base.BaseActivity
 import com.muhammetcagatay.guestlist.R
-import com.muhammetcagatay.guestlist.ui.base.BaseActivity
 
-class GuestListActivity : BaseActivity() {
+class GuestListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

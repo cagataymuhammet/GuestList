@@ -11,7 +11,7 @@ class Constants {
 
     companion object {
 
-        var API_BASE_URL: String = BuildConfig.API_BASE_URL
+        var API_BASE_URL: String =  BuildConfig.API_BASE_URL
 
     }
 }
