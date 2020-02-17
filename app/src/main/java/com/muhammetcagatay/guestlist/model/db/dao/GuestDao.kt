@@ -15,13 +15,20 @@ import com.cagataymuhammet.guestlist.db.entity.Guest
 interface GuestDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(vararg anr: Guest)
+    fun insert(vararg guest: Guest)
 
     @Query("DELETE FROM guests")
     fun deleteAll()
 
+    @Query("DELETE FROM guests where event==:eventId")
+    fun deleteAllByEventId(eventId:Int)
+
     @Query("SELECT * from guests")
     fun getAllGuests() :MutableList<Guest>
+
+
+    @Query("SELECT * from guests where event==:eventID")
+    fun getAllGuestsByEventID(eventID:Int) :MutableList<Guest>
 
     @Query("SELECT COUNT(*) from guests")
     fun getAllGuestsCount() :Int

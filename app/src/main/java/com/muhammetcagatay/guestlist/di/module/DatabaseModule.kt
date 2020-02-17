@@ -1,11 +1,10 @@
 package com.cagataymuhammet.guestlist.di.module
 
-import android.content.Context
 import androidx.room.Room
 import com.cagataymuhammet.guestlist.db.dao.EventDao
 import com.cagataymuhammet.guestlist.db.dao.GuestDao
 import com.muhammetcagatay.guestlist.App
-import com.muhammetcagatay.guestlist.db.AppDatabase
+import com.muhammetcagatay.guestlist.model.db.AppDatabase
 
 import dagger.Module
 import dagger.Provides

@@ -23,6 +23,7 @@ abstract class BaseActivity<VM : BaseViewModel, VDB : ViewDataBinding>(private v
         BoomsetApi.create()
     }
 
+
     @Inject
     internal lateinit var viewModelFactory: ViewModelProvider.Factory
 
@@ -33,15 +34,10 @@ abstract class BaseActivity<VM : BaseViewModel, VDB : ViewDataBinding>(private v
         DataBindingUtil.setContentView(this, getLayoutRes()) as VDB
     }
 
-
     val viewModel by lazy {
         ViewModelProviders.of(this, viewModelFactory).get(mViewModelClass)
     }
 
-    /**
-     * If you want to inject Dependency Injection
-     * on your activity, you can override this.
-     */
     open fun onInject() {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,13 +47,6 @@ abstract class BaseActivity<VM : BaseViewModel, VDB : ViewDataBinding>(private v
         onInject()
         setupBindingLifecycleOwner()
     }
-
-    /**
-     *
-     *  You need override this method.
-     *  And you need to set viewModel to binding: binding.viewModel = viewModel
-     *
-     */
 
     abstract fun initViewModel(viewModel: VM)
 
@@ -74,7 +63,6 @@ abstract class BaseActivity<VM : BaseViewModel, VDB : ViewDataBinding>(private v
     fun showLoading() {
         progressDialog = Utils.showLoadingDialog(this@BaseActivity)
     }
-
 
     fun hideLoading() {
         if (progressDialog != null) {

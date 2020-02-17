@@ -3,6 +3,7 @@ package com.muhammetcagatay.guestlist.ui.guest
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,10 +28,29 @@ class GuestListActivity : BaseActivity<GuestViewModel, ActivityGuestListBinding>
         binding.viewModel = viewModel
     }
 
+    var eventId:Int = -1
+
     override fun getLayoutRes(): Int = R.layout.activity_guest_list
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //actionbar
+        val actionbar = supportActionBar
+        //set actionbar title
+        actionbar!!.title = "New Activity"
+        //set back button
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
+        val moveStr:String =intent.getStringExtra("extra_event_id")
+        eventId=Integer.parseInt(moveStr)
+
+
         // setSupportActionBar(binding.toolbar)
         //  supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
@@ -42,20 +62,22 @@ class GuestListActivity : BaseActivity<GuestViewModel, ActivityGuestListBinding>
 
 
     fun getRemoteGuestAndSave() {
+
         if (NetworkUtils.isConnectedToInternet(applicationContext)) {
             showLoading()
 
-            serviceClient.getGuests(71787)
+            serviceClient.getGuests(eventId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                    { result ->
+                    {  result ->
                         viewModel.addGuestResponseToLocale(result.results)
+
                         hideLoading()
                         bindLocaleGuest()
                     },
                     {
-
+                         error -> Log.e("CAGATAYSE", error.message)
                         hideLoading()
                     }
                 )
@@ -63,9 +85,10 @@ class GuestListActivity : BaseActivity<GuestViewModel, ActivityGuestListBinding>
 
     }
 
-    fun bindLocaleGuest() {
-        if (viewModel.getLocaleGuests().size > 0) {
-            bindToList(viewModel.getLocaleGuests())
+    fun bindLocaleGuest()
+    {
+        if (viewModel.getLocaleGuests(eventId).size > 0) {
+            bindToList(viewModel.getLocaleGuests(eventId))
         }
     }
 

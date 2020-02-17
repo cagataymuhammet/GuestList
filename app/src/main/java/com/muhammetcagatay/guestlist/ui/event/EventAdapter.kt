@@ -20,10 +20,9 @@ class EventAdapter(val eventList: List<Event>,val listener: OnItemClickListener)
     }
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
-      //  holder.txtID?.text = eventList.get(position).event_id.toString()
         holder.txtName?.text =eventList.get(position).name
         holder.txtDate?.text =eventList.get(position).starts
-        holder.click( eventList.get(position),listener,position)
+        holder.click(eventList.get(position),listener,position)
     }
 
     override fun onCreateViewHolder(parentView: ViewGroup, position: Int): EventViewHolder {

@@ -9,7 +9,7 @@ import com.cagataymuhammet.guestlist.db.entity.Event
 import com.cagataymuhammet.guestlist.model.EventItem
 import com.cagataymuhammet.guestlist.ui.base.BaseViewModel
 import com.muhammetcagatay.guestlist.App
-import com.muhammetcagatay.guestlist.db.AppDatabase
+import com.muhammetcagatay.guestlist.model.db.AppDatabase
 import javax.inject.Inject
 
 class EventViewModel @Inject internal constructor(val app: App, val db: AppDatabase) : BaseViewModel() {

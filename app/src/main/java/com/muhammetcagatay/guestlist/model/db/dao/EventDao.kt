@@ -15,7 +15,7 @@ import com.cagataymuhammet.guestlist.db.entity.Event
 interface EventDao {
 
     @Insert(onConflict = REPLACE)
-    fun insert(vararg anr: Event)
+    fun insert(vararg guest: Event)
 
     @Query("DELETE FROM events")
     fun deleteAll()

@@ -92,7 +92,10 @@ class EventListActivity : BaseActivity<EventViewModel, ActivityEventListBinding>
 
             override fun onClick(eventItem: Event) {
                 val intent = Intent(this@EventListActivity, GuestListActivity::class.java)
-                intent.putExtra("extra_event_id",eventItem.event_id)
+
+
+
+                intent.putExtra("extra_event_id",eventItem.event_id.toString())
                 startActivity(intent)
             }
         })
