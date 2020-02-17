@@ -1,0 +1,41 @@
+
+{
+  "count": 3,
+  "previous": null,
+  "results": [
+    {
+      "id": 71790,
+      "name": "Demo Event 3 (More Guests)",
+      "group_id": 59578,
+      "timezone": "US/Eastern",
+      "starts": "2018-05-01T14:28:00",
+      "ends": "2018-05-05T14:28:00",
+      "venue": null,
+      "created": "2018-05-08T07:28:17",
+      "modified": "2020-02-08T18:15:04"
+    },
+    {
+      "id": 71788,
+      "name": "Demo Event 2",
+      "group_id": 59578,
+      "timezone": "US/Eastern",
+      "starts": "2018-05-01T14:20:00",
+      "ends": "2018-10-17T14:20:00",
+      "venue": null,
+      "created": "2018-05-08T07:20:13",
+      "modified": "2020-02-08T18:15:04"
+    },
+    {
+      "id": 71787,
+      "name": "Demo Event 1",
+      "group_id": 59578,
+      "timezone": "US/Eastern",
+      "starts": "2018-05-01T14:16:00",
+      "ends": "2018-10-18T14:16:00",
+      "venue": null,
+      "created": "2018-05-08T07:17:00",
+      "modified": "2020-02-08T18:15:04"
+    }
+  ],
+  "next": null
+}

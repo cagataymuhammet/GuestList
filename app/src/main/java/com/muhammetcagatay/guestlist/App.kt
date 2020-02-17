@@ -12,7 +12,7 @@ import javax.inject.Inject
  * Created by Muhammet ÇAĞATAY on 15,Şubat,2020
  */
 
-class App : DaggerApplication() {
+open class App : DaggerApplication() {
 
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
