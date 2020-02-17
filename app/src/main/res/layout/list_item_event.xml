@@ -38,15 +38,16 @@
 
 
             <TextView
-                android:id="@+id/txt_title"
+                android:id="@+id/txt_event_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorTurquoise"
                 android:textStyle="bold"
+                android:textSize="15dp"
                 tools:text="MUHAMMET ÇAĞATAY" />
 
             <TextView
-                android:id="@+id/txt_body"
+                android:id="@+id/txt_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="DATE" />

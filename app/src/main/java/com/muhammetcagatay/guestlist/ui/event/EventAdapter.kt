@@ -21,8 +21,8 @@ class EventAdapter(val eventList: List<Event>,val listener: OnItemClickListener)
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
       //  holder.txtID?.text = eventList.get(position).event_id.toString()
-        holder.txtTitle?.text =eventList.get(position).name
-        holder.txtBody?.text =eventList.get(position).starts
+        holder.txtName?.text =eventList.get(position).name
+        holder.txtDate?.text =eventList.get(position).starts
         holder.click( eventList.get(position),listener,position)
     }
 
@@ -36,8 +36,8 @@ class EventAdapter(val eventList: List<Event>,val listener: OnItemClickListener)
     }
 
     class EventViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val txtTitle = itemView.findViewById<TextView>(R.id.txt_title)
-        val txtBody = itemView.findViewById<TextView>(R.id.txt_body)
+        val txtName = itemView.findViewById<TextView>(R.id.txt_event_name)
+        val txtDate = itemView.findViewById<TextView>(R.id.txt_date)
         //val txtID = itemView.findViewById<TextView>(R.id.txt_user_id)
 
         fun click(event: Event,listener: OnItemClickListener, position: Int)

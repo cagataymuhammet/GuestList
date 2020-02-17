@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.cagataymuhammet.guestlist.di.key.ViewModelKey
 import com.cagataymuhammet.guestlist.ui.event.EventViewModel
+import com.cagataymuhammet.guestlist.ui.guest.GuestViewModel
 import com.muhammetcagatay.guestlist.util.ViewModelFactory
 import dagger.Binds
 import dagger.Module
@@ -24,6 +25,13 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(EventViewModel::class)
     internal abstract fun bindEventViewModel(viewModel: EventViewModel): ViewModel
+
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(GuestViewModel::class)
+    internal abstract fun bindGuestViewModel(viewModel: GuestViewModel): ViewModel
+
 
 
 }

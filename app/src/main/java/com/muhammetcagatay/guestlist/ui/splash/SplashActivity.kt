@@ -14,21 +14,15 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         object : CountDownTimer(1000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-
-            }
-
-            override fun onFinish() {
-
-                openAct()
-            }
+            override fun onTick(millisUntilFinished: Long) {}
+            override fun onFinish() { startEventListActiviy() }
         }.start()
-
     }
 
-    fun openAct()
-    {
+
+    fun startEventListActiviy() {
         val intent = Intent(this, EventListActivity::class.java)
         startActivity(intent)
+        finish()
     }
 }

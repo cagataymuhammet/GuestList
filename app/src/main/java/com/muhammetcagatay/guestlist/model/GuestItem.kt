@@ -25,7 +25,7 @@ data class GuestItem(
     @SerializedName("id")
     val id: Int,
     @SerializedName("job_title")
-    val jobTitle: Any,
+    val jobTitle: String,
     @SerializedName("last_name")
     val lastName: String,
     @SerializedName("modified")

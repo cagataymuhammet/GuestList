@@ -37,7 +37,6 @@ class EventListActivity : BaseActivity<EventViewModel, ActivityEventListBinding>
         super.onCreate(savedInstanceState)
        // setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        showLoading()
 
        // setTransparentStatusBar()
 
@@ -46,33 +45,36 @@ class EventListActivity : BaseActivity<EventViewModel, ActivityEventListBinding>
     }
 
 
-    fun bindLocaleEvents()
-    {
-        if(viewModel.getLocaleEvents().size>0)
-        {
-            bindToList(viewModel.getLocaleEvents())
-        }
-
-        hideLoading()
-    }
-
-
     fun getRemoteEventsAndSave()
     {
         if(NetworkUtils.isConnectedToInternet(applicationContext))
         {
+            showLoading()
+
             serviceClient.getEvents()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     {
-                            result -> Log.v("RESULT", "" + result)
-
+                            result ->
                         viewModel.addEventResponseToLocale(result.results)
-
+                        hideLoading()
+                        bindLocaleEvents()
                     },
-                    { error -> Log.e("ERROR", error.message) }
+                    {
+
+                        hideLoading()
+                    }
                 )
+        }
+
+    }
+
+    fun bindLocaleEvents()
+    {
+        if(viewModel.getLocaleEvents().size>0)
+        {
+            bindToList(viewModel.getLocaleEvents())
         }
     }
 

@@ -16,7 +16,8 @@
         android:usesCleartextTraffic="true">
 
 
-        <activity android:name=".ui.splash.SplashActivity">
+        <activity android:name=".ui.splash.SplashActivity"
+            android:theme="@style/AppThemeFullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +26,7 @@
         </activity>
 
         <activity android:name=".ui.guest.GuestListActivity"
-            android:label="@string/live_events"
+            android:label="@string/guests"
             />
         <activity android:name=".ui.event.EventListActivity"
             android:label="@string/live_events"

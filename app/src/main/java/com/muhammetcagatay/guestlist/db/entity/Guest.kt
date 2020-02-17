@@ -23,7 +23,7 @@ For attendees, show prefix, first_name, last_name under contact and title, compa
 data class Guest(@ColumnInfo(name = "first_name") var first_name: String?,
                  @ColumnInfo(name = "last_name") var last_name: String?,
                  @ColumnInfo(name = "company") var company: String?,
-                 @ColumnInfo(name = "event") var event_id: Long?,
+                 @ColumnInfo(name = "event") var event_id: Int?,
                  @ColumnInfo(name = "job_title") var job_title: String?) {
 
     @PrimaryKey(autoGenerate = true)

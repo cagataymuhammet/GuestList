@@ -1,10 +1,11 @@
 package com.cagataymuhammet.guestlist.ui.event
 
+import com.cagataymuhammet.guestlist.db.entity.Event
+
 /**
  * Created by Muhammet ÇAĞATAY on 16,Şubat,2020
  */
 
-import com.cagataymuhammet.guestlist.db.entity.Event
 import com.cagataymuhammet.guestlist.model.EventItem
 import com.cagataymuhammet.guestlist.ui.base.BaseViewModel
 import com.muhammetcagatay.guestlist.App
@@ -43,4 +44,6 @@ class EventViewModel @Inject internal constructor(val app: App, val db: AppDatab
         eventsLocaleData = db.eventDao().getAllEvents()
     }
 }
+
+
 
